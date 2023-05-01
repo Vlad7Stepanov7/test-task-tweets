@@ -20,4 +20,9 @@ export const ButtonBack = styled(NavLink)`
   color: #fff;
   background-color: #5736A3;
   border-radius: 10px;
+
+  &:hover,
+  &:focus {
+    background-color: #5CD3A8;
+  }
 `;
