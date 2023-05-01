@@ -19,7 +19,7 @@ const Tweets = () => {
     
     return (
         <>
-            <Paginator itemsPerPage="3" tweets={tweets}></Paginator>
+            <Paginator itemsPerPage={3} tweets={tweets}></Paginator>
             
             <NavLink to="/">Back</NavLink>
         </>
