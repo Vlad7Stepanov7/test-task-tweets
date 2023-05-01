@@ -2,7 +2,7 @@ import { Container, Background, Logo, WrapperForAvatar, Elipse } from "./Tweet.s
 import FollowerButton from "components/FollowerButton/FollowerButton";
 import Statistics from "components/Statistics/Statistics";
 
-const Tweet = ({avatar, followers, tweets}) => {
+const Tweet = ({avatar, followers, tweets, follower, id, handleRefresh}) => {
     return (
         <Container>
             <Logo></Logo>
@@ -11,7 +11,7 @@ const Tweet = ({avatar, followers, tweets}) => {
                 <Elipse avatar={avatar}></Elipse>
             </WrapperForAvatar>
             <Statistics followers={followers} tweets={tweets}></Statistics>
-            <FollowerButton/>
+            <FollowerButton follower={follower} followers={followers} id={id} handleRefresh={handleRefresh} />
         </Container>
     )
 }

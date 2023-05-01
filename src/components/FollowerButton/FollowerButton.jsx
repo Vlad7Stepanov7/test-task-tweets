@@ -1,11 +1,21 @@
-import { Button } from "./FollowerButton.styled";
 import { useState } from "react";
+import { Button } from "./FollowerButton.styled";
+import { following, offFollowing } from "api/api";
 
-const FollowerButton = () => {
-    const [isFollowing, setIsFollow] = useState(false);
+const FollowerButton = ({follower, followers, id, handleRefresh}) => {
+    const [isFollowing, setIsFollow] = useState(follower);
 
-    const onClick = () => {
-        setIsFollow(!isFollowing);
+    const onClick = async () => {
+        if (isFollowing) {
+            const follower = await offFollowing(id, followers);
+            setIsFollow(follower);
+            handleRefresh()
+            return;
+        }
+
+        const follower = await following(id, followers);
+        handleRefresh();
+        setIsFollow(follower);
     }
 
     return (

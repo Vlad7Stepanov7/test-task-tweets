@@ -2,8 +2,8 @@ import { useState } from "react";
 import { StyledPaginator } from "./Paginator.styled";
 import ListOfTweets from "components/ListOfTweets/ListOfTweets";
 
-function Paginator({ itemsPerPage, tweets }) {
-
+function Paginator({ itemsPerPage, tweets, handleRefresh }) {
+  
   const [itemOffset, setItemOffset] = useState(0);
 
  
@@ -23,15 +23,22 @@ function Paginator({ itemsPerPage, tweets }) {
 
   return (
     <>
-      <ListOfTweets currentItems={currentItems} />
+      <ListOfTweets currentItems={currentItems} handleRefresh={handleRefresh} />
       <StyledPaginator
         breakLabel="..."
-        nextLabel="next >"
+        nextLabel=">"
         onPageChange={handlePageClick}
         pageRangeDisplayed={5}
         pageCount={pageCount}
-        previousLabel="< previous"
+        previousLabel="<"
         renderOnZeroPageCount={null}
+        pageClassName="pageBtn"
+        previousClassName="arrowBtn"
+        nextClassName="arrowBtn"
+        pageLinkClassName="pageLink"
+        previousLinkClassName="previousLink"
+        nextLinkClassName="nextLink"
+        
       />
     </>
   );

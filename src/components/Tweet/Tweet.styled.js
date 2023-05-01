@@ -3,7 +3,6 @@ import picture from "../../images/picture.png";
 import vector from "../../images/vector.svg";
 
 export const Container = styled.div`
-  margin-left: 200px;
   position: relative;
   width: 380px;
   height: 460px;

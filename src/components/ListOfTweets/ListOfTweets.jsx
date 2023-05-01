@@ -1,16 +1,28 @@
 import Tweet from "components/Tweet/Tweet";
-import { List } from "./ListOfTweets.styled";
+import { List, Item } from "./ListOfTweets.styled";
 
-const ListOfTweets = ({ currentItems, }) => {
-    console.log(currentItems);
+const ListOfTweets = ({ currentItems, handleRefresh }) => {
     return (
         <>
             <List>
                 {currentItems &&
-                  currentItems.map(({id, avatar, followers, tweets}) => (
-                    <li key={id}>
-                        <Tweet avatar={avatar} followers={followers} tweets={tweets}></Tweet>
-                   </li>
+                    currentItems.map(({
+                        id,
+                        avatar,
+                        followers,
+                        tweets,
+                        follower
+                    }) => (
+                    <Item key={id}>
+                            <Tweet
+                                avatar={avatar}
+                                followers={followers}
+                                tweets={tweets}
+                                follower={follower}
+                                id={id}
+                                handleRefresh={handleRefresh}
+                            ></Tweet>
+                   </Item>
                ))}
             </List>
         </>

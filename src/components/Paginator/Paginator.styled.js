@@ -3,20 +3,16 @@ import styled from 'styled-components';
 
 export const StyledPaginator = styled(ReactPaginate)`
   margin: 0 auto;
-  /* width: fit-content; */
-  max-width: 324px;
-  height: 55px;
+  max-width: 400px;
+  height: 30px;
   padding: 20px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* gap: 15px; */
   background: #5736A3;
   box-shadow: 0px 4px 4px rgba(135, 135, 135, 0.2);
   border-radius: 26px;
-  @media screen and(min-width: 767px) {
-    width: 324px;
-  }
+  
   & .arrowBtn {
     width: 40px;
     height: 40px;
@@ -28,7 +24,7 @@ export const StyledPaginator = styled(ReactPaginate)`
     transition: all 250ms linear;
     &:hover,
     &:focus {
-      color: #252525;
+      color: #fff;
     }
   }
   & .previousLink,
@@ -47,11 +43,11 @@ export const StyledPaginator = styled(ReactPaginate)`
     transition: all 250ms linear;
     &:hover,
     &:focus {
-      background-color: #252525;
+      background-color: rgb(119, 76, 231);
       color: white;
     }
     &.selected {
-      background-color: #000;
+      background-color: rgb(255, 90, 109);
     }
   }
   & .pageLink {

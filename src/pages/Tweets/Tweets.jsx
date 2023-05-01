@@ -1,28 +1,32 @@
 import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { Container, ButtonBack } from "./Tweets.styled";
 import Paginator from "components/Paginator/Paginator";
-import axios from "axios";
+import { getTweets } from "api/api";
 
 
 
 
 const Tweets = () => {
     const [tweets, setTweets] = useState([]);
+    const [refreshTweets, setRefreshTweets] = useState(false);
 
     useEffect(() => {
         const fetch = async () => {
-            const data = await axios.get("https://644c053717e2663b9dfe3e2b.mockapi.io/api/v1/tweets")
-            setTweets(data.data);
+            const allTweets = await getTweets();
+            setTweets(allTweets);
         }
         fetch();
-    }, [tweets])
+    }, [refreshTweets])
+
+    const handleRefresh = () => {
+        setRefreshTweets(!refreshTweets);
+    }
     
     return (
-        <>
-            <Paginator itemsPerPage={3} tweets={tweets}></Paginator>
-            
-            <NavLink to="/">Back</NavLink>
-        </>
+        <Container>
+            <ButtonBack to="/">Back</ButtonBack>
+            <Paginator itemsPerPage={3} tweets={tweets} handleRefresh={handleRefresh}></Paginator>
+        </Container>
     )
 }
 

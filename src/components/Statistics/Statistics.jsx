@@ -1,10 +1,10 @@
 import { List, Item } from "./Statistics.styled";
 
 const Statistics = ({ followers, tweets }) => {
+    
     const convertedFollowers = followers + "";
     const arrayFollowers = convertedFollowers.split("");
       
-    
     if (arrayFollowers.length > 3) {
          arrayFollowers.splice(3, 0, ",");
         
