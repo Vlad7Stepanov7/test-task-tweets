@@ -1,16 +1,16 @@
 import { Container, Background, Logo, WrapperForAvatar, Elipse } from "./Tweet.styled";
-import FollowerButton from "../FollowerButton/FollowerButton";
-import Statistics from "../Statistics/Statistics";
+import FollowerButton from "components/FollowerButton/FollowerButton";
+import Statistics from "components/Statistics/Statistics";
 
-const Tweet = () => {
+const Tweet = ({avatar, followers, tweets}) => {
     return (
         <Container>
             <Logo></Logo>
             <Background></Background>
             <WrapperForAvatar>
-                <Elipse></Elipse>
+                <Elipse avatar={avatar}></Elipse>
             </WrapperForAvatar>
-            <Statistics></Statistics>
+            <Statistics followers={followers} tweets={tweets}></Statistics>
             <FollowerButton/>
         </Container>
     )

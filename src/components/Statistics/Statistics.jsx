@@ -1,11 +1,20 @@
 import { List, Item } from "./Statistics.styled";
 
-const Statistics = () => {
+const Statistics = ({ followers, tweets }) => {
+    const convertedFollowers = followers + "";
+    const arrayFollowers = convertedFollowers.split("");
+      
+    
+    if (arrayFollowers.length > 3) {
+         arrayFollowers.splice(3, 0, ",");
+        
+    }
+    
     return (
         <>
             <List>
-                <Item>777 TWEETS</Item>
-                <Item>100,500 FOLLOWERS</Item>
+                <Item>{tweets} TWEETS</Item>
+                <Item>{arrayFollowers} FOLLOWERS</Item>
             </List>
         </>
     )

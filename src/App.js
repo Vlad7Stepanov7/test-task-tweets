@@ -1,9 +1,14 @@
-import Tweet from "./components/Tweet/Tweet";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home/Home";
+import Tweets from "./pages/Tweets/Tweets";
 
 const App = () => {
   return (
     <div>
-      <Tweet/>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/tweets" element={<Tweets/>} />
+      </Routes>
     </div>
   );
 }

@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import picture from "../../images/picture.png";
 import vector from "../../images/vector.svg";
-import hansel from "../../images/hansel.png";
 
 export const Container = styled.div`
   margin-left: 200px;
@@ -60,7 +59,7 @@ export const Elipse = styled.div`
   border: 8px solid #EBD8FF;
   border-radius: 50%;
   background-color: #5736A3;
-  background-image: url(${hansel});
+  background-image: url(${p => p.avatar});
   background-repeat: no-repeat;
   background-size: contain;
 `;
