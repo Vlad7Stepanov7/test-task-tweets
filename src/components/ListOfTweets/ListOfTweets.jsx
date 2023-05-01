@@ -2,6 +2,7 @@ import Tweet from "components/Tweet/Tweet";
 import { List } from "./ListOfTweets.styled";
 
 const ListOfTweets = ({ currentItems, }) => {
+    console.log(currentItems);
     return (
         <>
             <List>

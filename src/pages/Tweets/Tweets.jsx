@@ -15,7 +15,7 @@ const Tweets = () => {
             setTweets(data.data);
         }
         fetch();
-    }, [])
+    }, [tweets])
     
     return (
         <>
